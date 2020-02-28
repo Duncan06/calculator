@@ -1,4 +1,17 @@
 
+
+let a = 0;
+let b = 0;
+let number = '';
+let option = '';
+// const output = document.getElementById('#number');
+
+// const selection = document.querySelectorAll('[data-number]');
+
+const operators = document.querySelectorAll('.operation');
+
+const solution = document.getElementById('#solve');
+
 function addition(a,b) {
     return a+b;
 }
@@ -32,22 +45,15 @@ function operate(call,a,b) {
     }
 }
 
-let a = 0;
-let b = 0;
-let number = '';
-let option = '';
-let current = document.getElementById('#number');
 
-current = document.querySelectorAll("[data-number]");
  
 function updateValue(){
     console.log(this);
-    num.concat(this.dataset.number)
-    current.value = `${number}`;
+    number = number.concat(this.dataset.number)
+    output.value = `${number}`;
     console.log(number);
 }
 
-operators = document.querySelectorAll(".operation");
 operators.forEach((operator) => {
     operator.addEventListener('click', (e) => {
         option = e.attr('id');
@@ -56,12 +62,11 @@ operators.forEach((operator) => {
     })
 })
 
-let solution = document.getElementById('#solve');
 solution.addEventListener('click', () => {
     b = parseInt(number);
     final = operate(option,a,b);
     a = final;
 })
 
-current.forEach(num => num.addEventListener('click', updateValue));
+// selection.forEach(num => num.addEventListener('click', updateValue));
 

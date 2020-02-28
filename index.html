@@ -5,7 +5,7 @@
 </head>
 
 <body>
-    <input type="text" id="number" value="0"> 
+    <input type="text" id="number"> 
     <br>
     <button data-number ="1" class="button"> 1 </button>
     <button data-number ="2" class="button"> 2 </button>
@@ -28,3 +28,10 @@
     <button id ="division" class="operation"> / </button>
 </body>
 
+<script>
+    const output = document.getElementById('number');
+
+    const selection = document.querySelectorAll('[data-number]');
+
+    selection.forEach(num => num.addEventListener('click', updateValue));
+</script>
