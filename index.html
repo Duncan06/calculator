@@ -28,39 +28,3 @@
     <button id ="division" class="operation"> / </button>
 </body>
 
-<script>
-let a = 0;
-let b = 0;
-let number = '';
-let option = '';
-let current = document.getElementById('#number');
-
-current = document.querySelectorAll("[data-number]");
- 
-function updatevalue(){
-    console.log(this);
-    num.concat(this.dataset.number)
-    current.value = `${number}`;
-    console.log(number);
-}
-
-operators = document.querySelectorAll(".operation");
-operators.forEach((operator) => {
-    operator.addEventListener('click', (e) => {
-        option = e.attr('id');
-        a = parseInt(number);
-        number = '';
-    })
-})
-
-let solution = document.getElementById('#solve');
-solution.addEventListener('click', () => {
-    b = parseInt(number);
-    final = operate(option,a,b);
-    a = final;
-})
-
-current.forEach(num => num.addEventListener('click', updatevalue));
-
-</script>
-
