@@ -34,4 +34,16 @@
     const selection = document.querySelectorAll('[data-number]');
 
     selection.forEach(num => num.addEventListener('click', updateValue));
+    
+    const operators = document.querySelectorAll('.operation');
+
+    operators.forEach(operator => operator.addEventListener('click', operate));
+
+    const solution = document.getElementById('solve');
+
+    solution.addEventListener('click', solve);
+
+    const clear = document.getElementById('clear');
+
+    clear.addEventListener('click', clears);
 </script>
