@@ -45,24 +45,29 @@ function updateValue(){
 
 function operate(){
     option = this.id;
-    if (a == NaN) {
-        return;
-    }
     a = parseFloat(number);
     number = '';
     return a;
 }
 
 function solve(){
-    b = parseFloat(number);
-    if (number == '' || a == '' || a == NaN) {
+    if (b == '') {
+        b = parseFloat(number);
+        if (isNaN(b)) {
+            b = '';
+            return a, b;
+        }
+    }
+    if (option == ''){
+        return;
+    }
+    if (number == '') {
         return;
     }
     final = operates(option,a,b);
     number = `${final}`;
     output.value = number;
-    a = '';
-    b = '';
+    a = final;
     return number, a, b;
 }
 
@@ -71,7 +76,8 @@ function clears(){
     number = '';
     a = '';
     b = '';
-    return number, a, b;
+    option = '';
+    return number, a, b, option;
 }
 
 
