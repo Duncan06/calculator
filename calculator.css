@@ -39,3 +39,15 @@ body {
     flex: auto;
     margin: .2em;
 }
+
+.button {
+    background-color: slategray;
+}
+
+#solve, #clear {
+    background-color: springgreen;
+}
+
+.operation {
+    background-color: tomato;
+}
