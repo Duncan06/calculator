@@ -44,8 +44,15 @@ function updateValue(){
 }
 
 function operate(){
+    if (option != '') {
+        return option;
+    }
     option = this.id;
     a = parseFloat(number);
+    if (isNaN(a)) {
+        a = '';
+        return a;
+    }
     number = '';
     return a;
 }
