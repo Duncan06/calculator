@@ -1,31 +1,37 @@
 <!DOCTYPE html>
 <head>
-    <link rel="styleshee" type ="css" href="calculator.css">
+    <link rel="stylesheet" type ="text/css" href="calculator.css">
     <script src ="calculator.js"></script>
 </head>
 
 <body>
-    <input type="text" id="number"> 
-    <br>
-    <button data-number ="7" class="button"> 7 </button>
-    <button data-number ="8" class="button"> 8 </button>
-    <button data-number ="9" class="button"> 9 </button>
-    <button id ="addition" class="operation"> + </button>
-    <br>
-    <button data-number ="4" class="button"> 4 </button>
-    <button data-number ="5" class="button"> 5 </button>
-    <button data-number ="6" class="button"> 6 </button>
-    <button id ="subtraction" class="operation"> - </button>
-    <br>
-    <button data-number ="1" class="button"> 1 </button>
-    <button data-number ="2" class="button"> 2 </button>
-    <button data-number ="3" class="button"> 3 </button>
-    <button id ="multiplication" class="operation"> * </button>
-    <br>
-    <button id ="clear" class="button"> CE </button>
-    <button data-number ="0" class="button"> 0 </button>
-    <button id ="solve" class="solve"> = </button>
-    <button id ="division" class="operation"> / </button>
+    <div id = "calc">
+        <input type="text" id="number"> 
+        <div id= "row1">
+            <button data-number ="7" class="button"> 7 </button>
+            <button data-number ="8" class="button"> 8 </button>
+            <button data-number ="9" class="button"> 9 </button>
+            <button id ="addition" class="operation"> + </button>
+        </div>
+        <div id= "row2">
+            <button data-number ="4" class="button"> 4 </button>
+            <button data-number ="5" class="button"> 5 </button>
+            <button data-number ="6" class="button"> 6 </button>
+            <button id ="subtraction" class="operation"> - </button>
+        </div>
+        <div id= "row3">
+            <button data-number ="1" class="button"> 1 </button>
+            <button data-number ="2" class="button"> 2 </button>
+            <button data-number ="3" class="button"> 3 </button>
+            <button id ="multiplication" class="operation"> * </button>
+        </div>
+        <div id= "row4">
+            <button id ="clear" class="button"> CE </button>
+            <button data-number ="0" class="button"> 0 </button>
+            <button id ="solve" class="button"> = </button>
+            <button id ="division" class="operation"> / </button>
+        </div>
+    </div>
 </body>
 
 <script>

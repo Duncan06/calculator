@@ -61,12 +61,9 @@ function solve(){
     final = operates(option,a,b);
     number = `${final}`;
     output.value = number;
+    a = '';
     b = '';
-    if (option == 'division'){
-        a = '';
-        return number, a, b;
-    }
-    return number, b;
+    return number, a, b;
 }
 
 function clears(){
