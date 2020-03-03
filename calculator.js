@@ -45,9 +45,6 @@ function updateValue(){
 }
 
 function operate(){
-    if (number != '') {
-        number = '';
-    }
     if (option != '') {
         option = this.id;
         if (b != '') {
