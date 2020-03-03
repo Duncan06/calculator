@@ -19,6 +19,11 @@ function multiplication(a,b) {
 }
 
 function division(a,b) {
+    if (b == 0) {
+        alert ("Are you trying to break me?");
+        clears();
+        return '';
+    }
     return a/b;
 }
 
@@ -82,6 +87,9 @@ function solve(){
         return;
     }
     final = operates(option,a,b);
+    if (final == '') {
+        return;
+    }
     number = '';
     output.value = `${final}`;
     a = final;
