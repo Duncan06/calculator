@@ -2,6 +2,7 @@
 
 let a = '';
 let b = '';
+let c = '';
 let number = '';
 let option = '';
 
@@ -44,7 +45,15 @@ function updateValue(){
 }
 
 function operate(){
+    if (number != '') {
+        number = '';
+    }
     if (option != '') {
+        option = this.id;
+        if (b != '') {
+            b = '';
+            return b, option;
+        }
         return option;
     }
     option = this.id;
@@ -52,6 +61,10 @@ function operate(){
     if (isNaN(a)) {
         a = '';
         return a;
+    }
+    if (b != '') {
+        b = '';
+        return b;
     }
     number = '';
     return a;
@@ -68,13 +81,14 @@ function solve(){
     if (option == ''){
         return;
     }
-    if (number == '') {
+    if (number == '' && b != c) {
         return;
     }
     final = operates(option,a,b);
-    number = `${final}`;
-    output.value = number;
+    number = '';
+    output.value = `${final}`;
     a = final;
+    c = b;
     return number, a, b;
 }
 
@@ -83,8 +97,9 @@ function clears(){
     number = '';
     a = '';
     b = '';
+    c = '';
     option = '';
-    return number, a, b, option;
+    return number, a, b, c, option;
 }
 
 
