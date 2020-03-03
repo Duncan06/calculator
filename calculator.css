@@ -7,6 +7,7 @@ body {
     justify-content: center;
     display:flex;
     flex: auto;
+    background-color: #5085B3;
     max-height: 100vh;
     max-width: 60vh;
     flex-wrap: wrap;
@@ -48,9 +49,9 @@ body {
 }
 
 #solve, #clear {
-    background-color: springgreen;
+    background-color: #ADB359;
 }
 
 .operation {
-    background-color: tomato;
+    background-color: #B3863E;
 }
