@@ -53,6 +53,11 @@ function disable(){
     this.disabled = true;
 }
 
+function back(){
+    number = number.substring(0, number.length - 1);
+    output.value = `${number}`;
+}
+
 function operate(){
     if (option != '') {
         option = this.id;
