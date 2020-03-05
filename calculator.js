@@ -49,6 +49,10 @@ function updateValue(){
     output.value = `${number}`;
 }
 
+function disable(){
+    this.disabled = true;
+}
+
 function operate(){
     if (option != '') {
         option = this.id;
@@ -67,6 +71,9 @@ function operate(){
     if (b != '') {
         b = '';
         return b;
+    }
+    if (decimal.disabled) {
+        decimal.disabled = false;
     }
     number = '';
     return a;
@@ -90,10 +97,16 @@ function solve(){
     if (final == '') {
         return;
     }
+    if (!Number.isInteger(final)) {
+        final = Math.round(final*1000)/1000;
+    }
     number = '';
     output.value = `${final}`;
     a = final;
     c = b;
+    if (decimal.disabled) {
+        decimal.disabled = false;
+    }
     return number, a, b;
 }
 
@@ -104,6 +117,7 @@ function clears(){
     b = '';
     c = '';
     option = '';
+    decimal.disabled = false;
     return number, a, b, c, option;
 }
 

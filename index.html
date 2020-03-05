@@ -33,10 +33,14 @@
             <button id ="multiplication" class="operation"> * </button>
         </div>
         <div id= "row4">
-            <button id ="clear" class="button"> CE </button>
+            <button id ="decimal" data-number = "." class="button"> . </button>
             <button data-number ="0" class="button"> 0 </button>
-            <button id ="solve" class="button"> = </button>
+            <button id = "back" class="button"> < </button>
             <button id ="division" class="operation"> / </button>
+        </div>
+        <div id= "row5">
+            <button id ="clear" class="button"> CE </button>
+            <button id ="solve" class="button"> = </button>
         </div>
     </div>
 </body>
@@ -59,4 +63,8 @@
     const clear = document.getElementById('clear');
 
     clear.addEventListener('click', clears);
+
+    const decimal = document.getElementById('decimal');
+
+    decimal.addEventListener('click', disable);
 </script>
