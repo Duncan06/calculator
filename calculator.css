@@ -28,6 +28,7 @@ body {
     background-color: #5085B3;
     max-height: 100vh;
     max-width: 60vh;
+    min-width: 328px;
     flex-wrap: wrap;
     border: solid black .3em;
     box-shadow:0 0 50px  rgba(0,0,0,0.3)

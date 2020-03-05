@@ -73,15 +73,15 @@ function operate(){
 }
 
 function solve(){
+    if (option == ''){
+        return;
+    }
     if (b == '') {
         b = parseFloat(number);
         if (isNaN(b)) {
             b = '';
             return a, b;
         }
-    }
-    if (option == ''){
-        return;
     }
     if (number == '' && b != c) {
         return;
