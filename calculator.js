@@ -54,6 +54,9 @@ function disable(){
 }
 
 function back(){
+    if (number.slice(-1) == ".") {
+        decimal.disabled = false;
+    }
     number = number.substring(0, number.length - 1);
     output.value = `${number}`;
 }
