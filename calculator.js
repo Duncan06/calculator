@@ -53,6 +53,28 @@ function disable(){
     this.disabled = true;
 }
 
+function log(e) {
+    if (e.key == "+") {
+        option = "addition"
+        operate();
+    }
+    if (e.key == "-"){
+        option = "subtraction"
+        operate();
+    }
+    if (e.key == "*"){
+        option = "multiplication"
+        operate();
+    }
+    if (e.key == "/"){
+        option = "division"
+        operate();
+    }
+    if (e.key == "Enter"){
+        solve();
+    }
+}
+
 function back(){
     if (number.slice(-1) == ".") {
         decimal.disabled = false;
@@ -62,7 +84,7 @@ function back(){
 }
 
 function operate(){
-    if (option != '') {
+    if (option != '' && this.id != undefined) {
         option = this.id;
         if (b != '') {
             b = '';
@@ -70,8 +92,7 @@ function operate(){
         }
         return option;
     }
-    option = this.id;
-    a = parseFloat(number);
+    a = parseFloat(output.value);
     if (isNaN(a)) {
         a = '';
         return a;
@@ -84,6 +105,7 @@ function operate(){
         decimal.disabled = false;
     }
     number = '';
+    output.value = '';
     return a;
 }
 
@@ -92,11 +114,12 @@ function solve(){
         return;
     }
     if (b == '') {
-        b = parseFloat(number);
+        b = parseFloat(output.value);
         if (isNaN(b)) {
             b = '';
             return a, b;
         }
+        number = output.value;
     }
     if (number == '' && b != c) {
         return;
