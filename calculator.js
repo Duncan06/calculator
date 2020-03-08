@@ -56,22 +56,22 @@ function disable(){
 function log(e) {
     if (e.key == "+") {
         option = "addition"
-        operate();
+        return operate(), option;
     }
     if (e.key == "-"){
         option = "subtraction"
-        operate();
+        return operate(), option;
     }
     if (e.key == "*"){
         option = "multiplication"
-        operate();
+        return operate(), option;
     }
     if (e.key == "/"){
         option = "division"
-        operate();
+        return operate(), option;
     }
     if (e.key == "Enter"){
-        solve();
+        return solve();
     }
 }
 
@@ -84,19 +84,33 @@ function back(){
 }
 
 function operate(){
-    if (option != '') {
+    if (a != ''){
+        b = parseFloat(output.value);
+        if (isNaN(b)) {
+            b = '';
+            return b;
+        }
+        solve();
+        b = '';
+        if (this.id != undefined){
+            option = this.id;
+        }
+        return b, option;
+    }
+    if (option != '' && this.id != undefined) {
         option = this.id;
         if (b != '') {
             b = '';
             return b, option;
         }
-        return option;
     }
     if (b != '') {
         b = '';
         return b;
     }
+    if (this.id != undefined) {
     option = this.id;
+    }
     if (a == ''){
         a = parseFloat(output.value);
         if (isNaN(a)) {
