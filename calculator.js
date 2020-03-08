@@ -84,13 +84,12 @@ function back(){
 }
 
 function operate(){
-    if (option != '' && this.id != undefined) {
-        option = this.id;
+    option = this.id;
+    if (option != '') {
         if (b != '') {
             b = '';
             return b, option;
         }
-        return option;
     }
     a = parseFloat(output.value);
     if (isNaN(a)) {
@@ -106,7 +105,7 @@ function operate(){
     }
     number = '';
     output.value = '';
-    return a;
+    return a, option;
 }
 
 function solve(){
