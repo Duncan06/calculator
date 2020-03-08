@@ -58,18 +58,22 @@ function log(e) {
         option = "addition"
         return operate(), option;
     }
+
     if (e.key == "-"){
         option = "subtraction"
         return operate(), option;
     }
+
     if (e.key == "*"){
         option = "multiplication"
         return operate(), option;
     }
+
     if (e.key == "/"){
         option = "division"
         return operate(), option;
     }
+    
     if (e.key == "Enter"){
         return solve();
     }
@@ -84,6 +88,7 @@ function back(){
 }
 
 function operate(){
+
     if (a != ''){
         b = parseFloat(output.value);
         if (isNaN(b)) {
@@ -97,6 +102,7 @@ function operate(){
         }
         return b, option;
     }
+
     if (option != '' && this.id != undefined) {
         option = this.id;
         if (b != '') {
@@ -104,13 +110,16 @@ function operate(){
             return b, option;
         }
     }
+
     if (b != '') {
         b = '';
         return b;
     }
+
     if (this.id != undefined) {
     option = this.id;
     }
+
     if (a == ''){
         a = parseFloat(output.value);
         if (isNaN(a)) {
@@ -118,9 +127,11 @@ function operate(){
             return a;
         }
     }
+
     if (decimal.disabled) {
         decimal.disabled = false;
     }
+
     number = '';
     output.value = '';
     return a, option;
@@ -130,6 +141,7 @@ function solve(){
     if (option == ''){
         return;
     }
+
     if (b == '') {
         b = parseFloat(output.value);
         if (isNaN(b)) {
@@ -138,16 +150,20 @@ function solve(){
         }
         number = output.value;
     }
+
     if (number == '' && b != c) {
         return;
     }
+
     final = operates(option,a,b);
     if (final == '') {
         return;
     }
+
     if (!Number.isInteger(final)) {
         final = Math.round(final*1000)/1000;
     }
+
     number = '';
     output.value = `${final}`;
     a = final;
@@ -155,6 +171,7 @@ function solve(){
     if (decimal.disabled) {
         decimal.disabled = false;
     }
+
     return number, a, b;
 }
 
