@@ -84,21 +84,25 @@ function back(){
 }
 
 function operate(){
-    option = this.id;
     if (option != '') {
+        option = this.id;
         if (b != '') {
             b = '';
             return b, option;
         }
-    }
-    a = parseFloat(output.value);
-    if (isNaN(a)) {
-        a = '';
-        return a;
+        return option;
     }
     if (b != '') {
         b = '';
         return b;
+    }
+    option = this.id;
+    if (a == ''){
+        a = parseFloat(output.value);
+        if (isNaN(a)) {
+            a = '';
+            return a;
+        }
     }
     if (decimal.disabled) {
         decimal.disabled = false;
