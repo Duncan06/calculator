@@ -46,7 +46,7 @@ function operates(call,a,b) {
 
 function updateValue(){
     number = number.concat(this.dataset.number)
-    output.value = `${number}`;
+    output.innerHTML = `${number}`;
 }
 
 function disable(){
@@ -74,8 +74,25 @@ function log(e) {
         return operate(), option;
     }
     
-    if (e.key == "Enter"){
-        return solve();
+    if (e.key == "Enter" || e.key == "="){
+        solve();
+    }
+
+    if (e.keyCode > 47 && e.keyCode < 58){
+        number = number.concat(e.key);
+        output.innerHTML = `${number}`;
+    }
+
+    if (e.key == "."){
+        if (!decimal.disabled){
+            number = number.concat(e.key);
+            output.innerHTML = `${number}`;
+        }
+        decimal.disabled = true;
+    }
+
+    if (e.key == "Backspace"){
+        back();
     }
 }
 
@@ -84,13 +101,13 @@ function back(){
         decimal.disabled = false;
     }
     number = number.substring(0, number.length - 1);
-    output.value = `${number}`;
+    output.innerHTML = `${number}`;
 }
 
 function operate(){
 
     if (a != ''){
-        b = parseFloat(output.value);
+        b = parseFloat(output.innerHTML);
         if (isNaN(b)) {
             b = '';
             return b;
@@ -121,7 +138,7 @@ function operate(){
     }
 
     if (a == ''){
-        a = parseFloat(output.value);
+        a = parseFloat(output.innerHTML);
         if (isNaN(a)) {
             a = '';
             return a;
@@ -133,7 +150,7 @@ function operate(){
     }
 
     number = '';
-    output.value = '';
+    output.innerHTML = '';
     return a, option;
 }
 
@@ -143,12 +160,12 @@ function solve(){
     }
 
     if (b == '') {
-        b = parseFloat(output.value);
+        b = parseFloat(output.innerHTML);
         if (isNaN(b)) {
             b = '';
             return a, b;
         }
-        number = output.value;
+        number = output.innerHTML;
     }
 
     if (number == '' && b != c) {
@@ -165,7 +182,7 @@ function solve(){
     }
 
     number = '';
-    output.value = `${final}`;
+    output.innerHTML = `${final}`;
     a = final;
     c = b;
     if (decimal.disabled) {
@@ -176,7 +193,7 @@ function solve(){
 }
 
 function clears(){
-    output.value = '';
+    output.innerHTML = '';
     number = '';
     a = '';
     b = '';
